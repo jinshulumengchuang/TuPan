@@ -6,4 +6,4 @@ RUN rm -rf /var/www/html/
 RUN mv KodExplorer /var/www/html/
 RUN chmod 755 /var/www/html -R
 EXPOSE 80
-CMD [“/usr/sbin/apache2”,” -D”,” FOREGROUND”]
+CMD /usr/sbin/apache2 -D FOREGROUND
