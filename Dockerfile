@@ -5,6 +5,9 @@ RUN git clone https://github.com/kalcaddle/KodExplorer.git
 RUN mkdir -p  /var/run/apache2
 RUN rm -rf /var/www/html/
 RUN mv KodExplorer /var/www/html/
-RUN chmod 755 /var/www/html -R
+RUN chmod 777 /var/www/html -R
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
 EXPOSE 80
 CMD apachectl -D FOREGROUND
